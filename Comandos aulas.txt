@@ -9,7 +9,7 @@ $env:FLASK_APP="app.py"
 deactivate
 
 
-criar projeto:
+criar projeto
 
 npx create-react-app <nome-projeto>
 
