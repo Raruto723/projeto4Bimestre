@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import ComecarJogo from './components/ComecarJogo';
+import Jogando from './components/Jogando';
+import TerminoJogo from './components/TerminoJogo';
 
+const estagios = [
+  { id: 1, nome: "inicio" },
+  { id: 2, nome: "jogando" },
+  { id: 3, nome: "fim" },
+];
 function App() {
+  const estagioJogo = estagios[1].nome
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {estagioJogo === "inicio" && <ComecarJogo/>}
+      {estagioJogo === "jogando" && <Jogando/>}
+      {estagioJogo === "fim" && <TerminoJogo/>}
     </div>
+    
   );
 }
 
