@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './jogando.css';
 
 const Jogando = ({ finalizarJogo }) => {
-    const [tentativas, setTentativas] = useState(7);
+    const [tentativas, setTentativas] = useState(10);
     const [pontos, setPonto] = useState(0);
     const [valor, setValor] = useState("");
     const [aviso, setAviso] = useState("");
@@ -24,6 +24,9 @@ const Jogando = ({ finalizarJogo }) => {
         if (isNaN(tentativaAtual)) {
             setAviso("Por favor, insira um número válido!");
             return;
+        } else if (tentativaAtual > 100 || tentativaAtual < 1) {
+            setAviso("Por favor, insira um número válido!");
+            return;
         }
 
         if (tentativas > 0) {
@@ -32,11 +35,11 @@ const Jogando = ({ finalizarJogo }) => {
                     <>
                         Parabéns! Você acertou! <br />
                         Novo número sorteado. <br />
-                        Continue jogando. Você ganhou mais duas chances!
+                        Continue jogando. Você ganhou mais quatro chances!
                     </>
                 );
                 setPonto(pontos + 1);
-                setTentativas(tentativas + 2);
+                setTentativas(tentativas + 4);
                 const numSort = Math.floor(Math.random() * 100) + 1;
                 localStorage.setItem('sorteado', numSort);
             } else {
@@ -69,7 +72,7 @@ const Jogando = ({ finalizarJogo }) => {
                     
                     <label htmlFor="escolha">
                         Digite um número de 1 até 100 <br /> Clique no botão para enviar!
-                        <input type="number" name="escolha" id="escolha" min={1} max={100} onChange={(e) => setValor(e.target.value)}/>
+                        <input type="number" name="escolha" id="escolha" onChange={(e) => setValor(e.target.value)}/>
                     </label>
                     <button className='botJogo' type="button" onClick={enviarTentativa}>
                         Submeter
