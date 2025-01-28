@@ -5,13 +5,13 @@ const TerminoJogo = ({ fechar, recomecar }) => {
     const pontos = localStorage.getItem('pontosFinal');
     
     return (
-        <div className="termino-container">
-            <h1>Fim do jogo!</h1>
-            <h2>O recorde é {recorde}</h2>
-            <h2>Sua pontuação final é: <span>{pontos}</span></h2>
+        <div className="termino">
+            <img src="img/titulo3.png" alt="titulo" className='titulo' />
+            <h2 className='sub2' >O recorde é: {recorde}</h2>
+            <h2 className='sub2' >Sua pontuação final é: <span>{pontos}</span></h2>
             <div className="botoes">
-                <button onClick={fechar}>Finalizar jogo</button>
-                <button onClick={recomecar}>Recomeçar</button>
+                <button className='botInicio' onClick={fechar}>Finalizar jogo</button>
+                <button className='botInicio' onClick={recomecar}>Recomeçar</button>
             </div>
         </div>
     );

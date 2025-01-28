@@ -58,26 +58,28 @@ const Jogando = ({ finalizarJogo }) => {
 
     return (
         <div className="App">
-            <img src="img/titulo4.png" alt="titulo" className="titulo" />
-            <img src="img/lucky.gif" alt="gif" className="gif" />
-            <p>Chances restantes: {tentativas}</p>
-            {aviso && <p className="aviso">{aviso}</p>}
+            <img src="img/titulo2.png" alt="titulo" className="titulo" />
+            
+            <p className='sub3' >Chances restantes: {tentativas}</p>
+            <p className='sub3'>Pontos: {pontos}</p>
+            {aviso && <p className="sub3">{aviso}</p>}
             {tentativas !== 0 && (
                 <form>
-                    <p>Pontos: {pontos}</p>
+                    <img src="img/sonic4.gif" alt="gif" className="gif2" />
+                    
                     <label htmlFor="escolha">
-                        Digite um número de 1 até 100:
+                        Digite um número de 1 até 100 <br /> Clique no botão para enviar!
                         <input type="number" name="escolha" id="escolha" min={1} max={100} onChange={(e) => setValor(e.target.value)}/>
                     </label>
-                    <button type="button" onClick={enviarTentativa}>
+                    <button className='botJogo' type="button" onClick={enviarTentativa}>
                         Submeter
                     </button>
                 </form>
             )}
             {tentativas === 0 && (
-                <div className="start">
-                    <p>Você perdeu! Clique no botão abaixo para ver seu resultado.</p>
-                    <button onClick={finalizarJogo}>Resultado</button>
+                <div className="App">
+                    <p className='sub3'>Você perdeu! Clique no botão abaixo para ver seu resultado.</p>
+                    <button className='botInicio' onClick={finalizarJogo}>Resultado</button>
                 </div>
             )}
         </div>
