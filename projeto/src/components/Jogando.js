@@ -80,7 +80,7 @@ const Jogando = ({ finalizarJogo }) => {
                 </form>
             )}
             {tentativas === 0 && (
-                <div className="App">
+                <div className="AppGameOver">
                     <p className='sub3'>Você perdeu! Clique no botão abaixo para ver seu resultado.</p>
                     <button className='botInicio' onClick={finalizarJogo}>Resultado</button>
                 </div>
