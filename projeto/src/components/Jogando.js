@@ -28,8 +28,7 @@ const Jogando = ({ finalizarJogo }) => {
             setAviso("Por favor, insira um número válido!");
             return;
         }
-
-        if (tentativas > 0) {
+        if (tentativas >= 1) {
             if (tentativaAtual === num) {
                 setAviso(
                     <>
@@ -46,17 +45,17 @@ const Jogando = ({ finalizarJogo }) => {
                 setTentativas(tentativas - 1);
                 setAviso(tentativaAtual < num ? "Para cima!" : "Para baixo!");
             }
-        }
-
-        if (tentativas === 1) {
+        } else {
+            setTentativas(0);
             setAviso("Suas chances acabaram!");
             localStorage.setItem('pontosFinal', pontos);
-
+        
             if (pontos > recorde) {
                 setRecorde(pontos);
                 localStorage.setItem('recorde', pontos);
             }
         }
+        
     };
 
     return (
@@ -81,6 +80,7 @@ const Jogando = ({ finalizarJogo }) => {
             )}
             {tentativas === 0 && (
                 <div className="AppGameOver">
+                    <img src="img/sonic4.gif" alt="gif" className="gif2" />
                     <p className='sub3'>Você perdeu! Clique no botão abaixo para ver seu resultado.</p>
                     <button className='botInicio' onClick={finalizarJogo}>Resultado</button>
                 </div>
