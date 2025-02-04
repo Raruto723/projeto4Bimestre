@@ -1,6 +1,6 @@
 # 🎮 Jogo de Adivinhação de Números
 
-Este projeto é um jogo onde o jogador deve adivinhar um número entre 1 e 100. O jogador tem um número limitado de tentativas e pode ganhar pontos ao acertar o número sorteado. O jogo é baseado em um sistema de fases e oferece feedback dinâmico para manter o jogador engajado.
+Este projeto é um jogo onde o jogador deve adivinhar um número entre 1 e 100. O jogador tem um número limitado de tentativas e pode ganhar pontos ao acertar o número sorteado. O jogo é baseado em um sistema de estágios e oferece feedback dinâmico para manter o jogador engajado.
 
 ## 🚀 Funcionalidades
 
